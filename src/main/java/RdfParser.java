@@ -14,12 +14,13 @@ public class RdfParser {
 
         RDFWriter writer = Rio.createWriter(format, stream);
 
+        writer.startRDF();
+
         for (Statement statement : statements) {
-            writer.startRDF();
             writer.handleStatement(statement);
-            writer.endRDF();
         }
 
+        writer.endRDF();
         stream.close();
     }
 }
