@@ -16,8 +16,9 @@ public class APIConnector {
     void sendGet() throws Exception {
 
         String sensorID = "5ce2722730705e001adf023a";
+        String mobileSensorID = "5cc58071facf70001a872bef";
 
-        String url = "https://api.opensensemap.org/boxes/"+sensorID+ "?format=json";
+        String url = "https://api.opensensemap.org/boxes/"+mobileSensorID+ "?format=json";
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
