@@ -91,11 +91,12 @@ public class Helpers {
         }
 
         if (obj.has("currentLocation")){
-            sb.setBuiltInSensors(readSensorsFromJSON(obj));
+            sb.setCurrentLocation(readLocationFromJSON(obj));
         }
 
         if (obj.has("sensors")){
-            sb.setCurrentLocation(readLocationFromJSON(obj));
+            sb.setBuiltInSensors(readSensorsFromJSON(obj));
+
         }
         return sb;
     }

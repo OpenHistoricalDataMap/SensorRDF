@@ -24,7 +24,7 @@ public class APIConnector {
     public void sendGetToAll(List<String> availableAPIurls) throws Exception {
 
        // for (String u : availableAPIurls) {
-            URL url = new URL("https://api.opensensemap.org/boxes/5ce2722730705e001adf023a/");
+            URL url = new URL("https://api.opensensemap.org/boxes/5ce2722730705e001adf023a/sensors");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
             con.setRequestMethod("GET");
@@ -57,69 +57,6 @@ public class APIConnector {
     }
 
 
-    /**
-     *
-     * {
-     *     "_id": "5ce2722730705e001adf023a",
-     *     "sensors": [
-     *         {
-     *             "title": "Temperatur",
-     *             "unit": "°C",
-     *             "sensorType": "HDC1080",
-     *             "icon": "osem-thermometer",
-     *             "_id": "5ce2722730705e001adf023f",
-     *             "lastMeasurement": {
-     *                 "value": "25.24",
-     *                 "createdAt": "2019-06-06T14:32:17.623Z"
-     *             }
-     *         },
-     *         {
-     *             "title": "rel. Luftfeuchte",
-     *             "unit": "%",
-     *             "sensorType": "HDC1080",
-     *             "icon": "osem-humidity",
-     *             "_id": "5ce2722730705e001adf023e",
-     *             "lastMeasurement": {
-     *                 "value": "59.89",
-     *                 "createdAt": "2019-06-06T14:32:17.623Z"
-     *             }
-     *         },
-     *         {
-     *             "title": "Luftdruck",
-     *             "unit": "hPa",
-     *             "sensorType": "BMP280",
-     *             "icon": "osem-barometer",
-     *             "_id": "5ce2722730705e001adf023d",
-     *             "lastMeasurement": {
-     *                 "value": "1002.88",
-     *                 "createdAt": "2019-06-06T14:32:17.623Z"
-     *             }
-     *         },
-     *         {
-     *             "title": "Beleuchtungsstärke",
-     *             "unit": "lx",
-     *             "sensorType": "TSL45315",
-     *             "icon": "osem-brightness",
-     *             "_id": "5ce2722730705e001adf023c",
-     *             "lastMeasurement": {
-     *                 "value": "8.00",
-     *                 "createdAt": "2019-06-06T14:32:17.623Z"
-     *             }
-     *         },
-     *         {
-     *             "title": "UV-Intensität",
-     *             "unit": "μW/cm²",
-     *             "sensorType": "VEML6070",
-     *             "icon": "osem-brightness",
-     *             "_id": "5ce2722730705e001adf023b",
-     *             "lastMeasurement": {
-     *                 "value": "0.00",
-     *                 "createdAt": "2019-06-06T14:32:17.623Z"
-     *             }
-     *         }
-     *     ]
-     * }
-     * **/
 
     public void sendGet(String toBeQueried) throws Exception {
 
