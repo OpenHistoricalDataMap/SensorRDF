@@ -1,11 +1,18 @@
+import api.APIConnector;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+
     public static void main(String[] args) {
 
         APIConnector ac = new APIConnector();
-
+        List<String> availableAPIurls = initAvailableUrls();
 
         try {
-        ac.sendGet();
+        ac.sendGetToAll(availableAPIurls);
+
 
         } catch (Exception e){
             e.printStackTrace();
@@ -13,4 +20,17 @@ public class Main {
 
 
     }
+
+    private static List<String> initAvailableUrls(){
+
+        int i = 1;
+
+        ArrayList<String> availableUrls = new ArrayList<String>();
+
+
+
+
+       return availableUrls;
+    }
+
 }
