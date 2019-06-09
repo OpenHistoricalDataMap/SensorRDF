@@ -1,9 +1,8 @@
 package models;
 
-
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.List;
 
+import java.util.List;
 
 public class SenseBox {
 
@@ -28,18 +27,7 @@ public class SenseBox {
     @JsonProperty("exposure")
     private String exposure;
 
-    public SenseBox(){
-
-    }
-
-    public SenseBox(String id, List<Sensor> builtInSensors, String createdAt, String updatedAt, String name, Location currentLocation, String exposure) {
-        this.id = id;
-        this.builtInSensors = builtInSensors;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.name = name;
-        this.currentLocation = currentLocation;
-        this.exposure = exposure;
+    public SenseBox() {
     }
 
     public String getId() {
@@ -54,7 +42,6 @@ public class SenseBox {
         return builtInSensors;
     }
 
-    @JsonProperty("sensors")
     public void setBuiltInSensors(List<Sensor> builtInSensors) {
         this.builtInSensors = builtInSensors;
     }
@@ -101,7 +88,7 @@ public class SenseBox {
 
     @Override
     public String toString() {
-        return "SenseBox "+id+ "{" +
+        return "SenseBox " + id + "{" +
                 ", sensors=" + builtInSensors +
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
@@ -110,13 +97,4 @@ public class SenseBox {
                 ", exposure='" + exposure + '\'' +
                 '}';
     }
-
-/**
-    @SuppressWarnings("unchecked")
-    @JsonProperty("sensors")
-    private void unpackSensors(Map<String,Object> brand) {
-        this.builtInSensors = (String)builtInSensors.get("lastMeasurement");
-        Map<String,String> owner = (Map<String,String>)builtInSensors.get("owner");
-        this.ownerName = owner.get("name");
-    }**/
 }
