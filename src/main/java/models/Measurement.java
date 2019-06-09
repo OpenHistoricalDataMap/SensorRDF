@@ -2,6 +2,8 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Arrays;
+
 public class Measurement {
 
     @JsonProperty("value")
@@ -9,6 +11,9 @@ public class Measurement {
 
     @JsonProperty("createdAt")
     private String createdAt;
+
+    @JsonProperty("location")
+    private double[] location;
 
     public Measurement() {
     }
@@ -29,10 +34,19 @@ public class Measurement {
         this.createdAt = createdAt;
     }
 
+    public double[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(double[] location) {
+        this.location = location;
+    }
+
     @Override
     public String toString() {
         return "{" +
                 "value=" + value +
+                ", location=" + Arrays.toString(location) +
                 ", createdAt=" + createdAt +
                 '}';
     }

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import models.Location;
+import models.Measurement;
 import models.SenseBox;
 
 import java.io.IOException;
@@ -15,6 +16,14 @@ public class JsonConverter {
         ObjectMapper objectMapper = new ObjectMapper();
 
         return objectMapper.readValue(json, SenseBox.class);
+    }
+
+    public static List<Measurement> convertJsonToMeasurements(String json) throws IOException {
+        System.out.println(json);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        return objectMapper.readValue(json, new TypeReference<List<Measurement>>(){});
     }
 
     public static List<Location> convertJsonToLocations(String json) throws IOException {
