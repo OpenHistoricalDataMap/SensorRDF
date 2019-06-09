@@ -7,8 +7,8 @@ import org.eclipse.rdf4j.model.vocabulary.GEO;
 import org.eclipse.rdf4j.rio.RDFFormat;
 
 import org.junit.jupiter.api.Test;
-import rdf.RdfParser;
-import rdf.SOSA;
+import util.RdfParser;
+import vocabularys.SOSA;
 
 import java.io.IOException;
 import java.util.Arrays;

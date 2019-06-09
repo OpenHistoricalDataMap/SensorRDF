@@ -1,7 +1,7 @@
 package apis;
 
 import models.SenseBox;
-import util.Helpers;
+import util.JsonConverter;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,6 +31,6 @@ public class OpenSenseMapApi {
 
         reader.close();
 
-        return Helpers.readJSONResponseToPOJO(response.toString());
+        return JsonConverter.convertJsonToSenseBox(response.toString());
     }
 }
