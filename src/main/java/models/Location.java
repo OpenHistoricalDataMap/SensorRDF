@@ -1,22 +1,21 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.Arrays;
 
 public class Location {
 
+    @JsonProperty("timestamp")
     private String timestamp;
-    private Double[] coordinates;
+
+    @JsonProperty("coordinates")
+    private double[] coordinates;
+
+    @JsonProperty("type")
     private String type;
 
-
-    public Location(){
-
-    }
-
-    public Location(String timestamp, Double[] coordinates, String type) {
-        this.timestamp = timestamp;
-        this.coordinates = coordinates;
-        this.type = type;
+    public Location() {
     }
 
     public String getTimestamp() {
@@ -27,11 +26,11 @@ public class Location {
         this.timestamp = timestamp;
     }
 
-    public Double[] getCoordinates() {
+    public double[] getCoordinates() {
         return coordinates;
     }
 
-    public void setCoordinates(Double[] coordinates) {
+    public void setCoordinates(double[] coordinates) {
         this.coordinates = coordinates;
     }
 

@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Measurement {
 
-
     @JsonProperty("value")
     private double value;
 
