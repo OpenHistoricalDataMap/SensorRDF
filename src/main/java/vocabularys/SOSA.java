@@ -12,10 +12,14 @@ public class SOSA {
     public static final String PREFIX = "sosa";
 
     // Classes
+    public static final IRI Platform = factory.createIRI(NAMESPACE + "Platform");
     public static final IRI Sensor = factory.createIRI(NAMESPACE + "Sensor");
     public static final IRI Result = factory.createIRI(NAMESPACE + "Result");
+    public static final IRI Observation = factory.createIRI(NAMESPACE + "Observation");
 
     // Properties
+    public static final IRI hosts = factory.createIRI(NAMESPACE + "hosts");
     public static final IRI hasSimpleResult = factory.createIRI(NAMESPACE + "hasSimpleResult");
     public static final IRI resultTime = factory.createIRI(NAMESPACE + "resultTime");
+    public static final IRI madeBySensor = factory.createIRI(NAMESPACE + "madeBySensor");
 }
