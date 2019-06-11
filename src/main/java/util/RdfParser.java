@@ -1,4 +1,4 @@
-package rdf;
+package util;
 
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.RDFFormat;

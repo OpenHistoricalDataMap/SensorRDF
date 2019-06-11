@@ -1,38 +1,36 @@
 package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.node.ObjectNode;
-
-
-import java.text.SimpleDateFormat;
-import java.util.List;
-import java.util.Map;
-
-// DateFormat String timestamp = new SimpleDateFormat("yyyy-MM-dd'T'h:m:ssZZZZZ").format(new Date());
-
 
 public class Sensor {
 
+    @JsonProperty("icon")
+    private String icon;
+
     @JsonProperty("title")
     private String title;
+
+    @JsonProperty("unit")
+    private String unit;
+
     @JsonProperty("sensorType")
     private String sensorType;
+
     @JsonProperty("_id")
     private String sensorID;
-    private String unit;
+
     @JsonProperty("lastMeasurement")
     private Measurement lastMeasurement;
-
 
     public Sensor() {
     }
 
-    public Sensor(String title, String sensorType, String sensorID, Measurement measurement, String unit) {
-        this.title = title;
-        this.sensorType = sensorType;
-        this.sensorID = sensorID;
-        this.lastMeasurement = measurement;
-        this.unit = unit;
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 
     public String getTitle() {
@@ -41,6 +39,14 @@ public class Sensor {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 
     public String getSensorType() {
@@ -59,22 +65,20 @@ public class Sensor {
         this.sensorID = sensorID;
     }
 
+    public Measurement getLastMeasurement() {
+        return lastMeasurement;
+    }
+
     public void setLastMeasurement(Measurement lastMeasurement) {
         this.lastMeasurement = lastMeasurement;
-    }
-
-    public String getUnit() {
-        return unit;
-    }
-
-    public void setUnit(String unit) {
-        this.unit = unit;
     }
 
     @Override
     public String toString() {
         return "Sensor{" +
-                "title='" + title + '\'' +
+                "icon='" + icon + "\'" +
+                ", unit='" + unit + "\'" +
+                ", title='" + title + '\'' +
                 ", sensorType='" + sensorType + '\'' +
                 ", sensorID='" + sensorID + '\'' +
                 ", lastMeasurement=" + lastMeasurement.toString() +

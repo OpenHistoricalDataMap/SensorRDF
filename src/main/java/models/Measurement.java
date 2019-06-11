@@ -2,10 +2,9 @@ package models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.text.SimpleDateFormat;
+import java.util.Arrays;
 
 public class Measurement {
-
 
     @JsonProperty("value")
     private double value;
@@ -13,21 +12,10 @@ public class Measurement {
     @JsonProperty("createdAt")
     private String createdAt;
 
-    private final String DATE_FORMAT = "yyyy-MM-dd'T'h:m:ssZZZZZ";
+    @JsonProperty("location")
+    private double[] location;
 
     public Measurement() {
-    }
-/**
-    public Measurement(double value, SimpleDateFormat createdAt) {
-
-        this.value = value;
-        this.createdAt = createdAt;
-    }**/
-
-    public Measurement(double value, String createdAt) {
-
-        this.value = value;
-        this.createdAt = createdAt;
     }
 
     public double getValue() {
@@ -46,22 +34,19 @@ public class Measurement {
         this.createdAt = createdAt;
     }
 
-    /**
-    public SimpleDateFormat getCreatedAt() {
-        return createdAt;
+    public double[] getLocation() {
+        return location;
     }
 
-    public void setCreatedAt(SimpleDateFormat createdAt) {
-        this.createdAt = createdAt;
+    public void setLocation(double[] location) {
+        this.location = location;
     }
-**/
-
-
 
     @Override
     public String toString() {
         return "{" +
                 "value=" + value +
+                ", location=" + Arrays.toString(location) +
                 ", createdAt=" + createdAt +
                 '}';
     }
