@@ -16,7 +16,7 @@ public class OpenSenseMapApi {
 
     // https://docs.opensensemap.org/#api-Measurements-getLatestMeasurements
     public static SenseBox getSenseBoxLatestMeasurement(String senseBoxId) throws IOException {
-        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/sensors");
+        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId);
 
         return JsonConverter.convertJsonToSenseBox(getJsonFromUrl(url));
     }

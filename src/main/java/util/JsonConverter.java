@@ -19,8 +19,6 @@ public class JsonConverter {
     }
 
     public static List<Measurement> convertJsonToMeasurements(String json) throws IOException {
-        System.out.println(json);
-
         ObjectMapper objectMapper = new ObjectMapper();
 
         return objectMapper.readValue(json, new TypeReference<List<Measurement>>(){});
