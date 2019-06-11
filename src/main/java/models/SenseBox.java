@@ -1,5 +1,6 @@
 package models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -9,23 +10,34 @@ public class SenseBox {
     @JsonProperty("_id")
     private String id;
 
-    @JsonProperty("sensors")
-    private List<Sensor> builtInSensors;
-
     @JsonProperty("createdAt")
     private String createdAt;
 
     @JsonProperty("updatedAt")
     private String updatedAt;
 
+    @JsonProperty("sensors")
+    private List<Sensor> builtInSensors;
+
     @JsonProperty("name")
     private String name;
+
+    @JsonProperty("exposure")
+    private String exposure;
 
     @JsonProperty("currentLocation")
     private Location currentLocation;
 
-    @JsonProperty("exposure")
-    private String exposure;
+    @JsonProperty("model")
+    private String model;
+
+    @JsonProperty("lastMeasurementAt")
+    private String lastMeasurementAt;
+
+    // Ignoring this one, since it is nested further and only contains redundant data
+    @JsonProperty("loc")
+    @JsonIgnore
+    private Object loc;
 
     public SenseBox() {
     }
@@ -84,6 +96,26 @@ public class SenseBox {
 
     public void setExposure(String exposure) {
         this.exposure = exposure;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getLastMeasurementAt() {
+        return lastMeasurementAt;
+    }
+
+    public void setLastMeasurementAt(String lastMeasurementAt) {
+        this.lastMeasurementAt = lastMeasurementAt;
+    }
+
+    public Object getLoc() {
+        return loc;
+    }
+
+    public void setLoc(Object loc) {
+        this.loc = loc;
     }
 
     @Override
