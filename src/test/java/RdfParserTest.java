@@ -1,3 +1,4 @@
+import apis.OpenSenseMapApi;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Statement;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class RdfParserTest {
 
@@ -24,7 +26,7 @@ public class RdfParserTest {
 
         IRI subject = factory.createIRI("station:4711");
         IRI predicate1 = GEO.WKT_LITERAL;
-        Literal object1 = factory.createLiteral("POINT(13.524448, 52.455685");
+        Literal object1 = factory.createLiteral("POINT(13.524448, 52.455685)");
         Statement s1 = factory.createStatement(subject, predicate1, object1);
 
         IRI predicate2 = SOSA.hasSimpleResult;
@@ -36,5 +38,12 @@ public class RdfParserTest {
         Statement s3 = factory.createStatement(subject, predicate3, object3);
 
         RdfParser.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+    }
+
+    @Test
+    public void testStatementsCreation() throws IOException {
+        List<Statement> statements = RdfParser.SenseBoxToStatements(OpenSenseMapApi.getSenseBoxLatestMeasurement("5cc58071facf70001a872bef"));
+
+        RdfParser.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
     }
 }
