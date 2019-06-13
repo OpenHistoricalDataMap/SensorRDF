@@ -1,4 +1,3 @@
-import apis.OpenSenseMapApi;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Statement;
@@ -8,16 +7,16 @@ import org.eclipse.rdf4j.model.vocabulary.GEO;
 import org.eclipse.rdf4j.rio.RDFFormat;
 
 import org.junit.jupiter.api.Test;
-import util.RdfParser;
+
+import util.osm.RdfOutput;
 import vocabularys.SOSA;
 
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 
-public class RdfParserTest {
+public class RdfOutputTest {
 
     @Test
     public void testOutput() throws IOException {
@@ -37,13 +36,6 @@ public class RdfParserTest {
         Literal object3 = factory.createLiteral(new GregorianCalendar(2019, Calendar.MAY, 31).getTime());
         Statement s3 = factory.createStatement(subject, predicate3, object3);
 
-        RdfParser.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
-    }
-
-    @Test
-    public void testStatementsCreation() throws IOException {
-        List<Statement> statements = RdfParser.SenseBoxToStatements(OpenSenseMapApi.getSenseBoxLatestMeasurement("5cc58071facf70001a872bef"));
-
-        RdfParser.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutput.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
     }
 }

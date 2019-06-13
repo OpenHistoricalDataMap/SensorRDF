@@ -1,7 +1,7 @@
 import apis.OpenSenseMapApi;
-import models.Location;
-import models.SenseBox;
-import models.Sensor;
+import models.osm.Location;
+import models.osm.SenseBox;
+import models.osm.Sensor;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

@@ -1,6 +1,8 @@
-package util;
+package util.osm.rdf;
 
-import models.Sensor;
+import models.osm.Location;
+import models.osm.Measurement;
+import models.osm.Sensor;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Statement;
@@ -9,36 +11,13 @@ import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.model.vocabulary.GEO;
 import org.eclipse.rdf4j.model.vocabulary.RDF;
 import org.eclipse.rdf4j.model.vocabulary.RDFS;
-import org.eclipse.rdf4j.rio.RDFFormat;
-import org.eclipse.rdf4j.rio.RDFParser;
-import org.eclipse.rdf4j.rio.RDFWriter;
-import org.eclipse.rdf4j.rio.Rio;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.*;
 
-import models.SenseBox;
+import models.osm.SenseBox;
 import vocabularys.SOSA;
 
 public class RdfParser {
-
-    public static void OutputRdfToFile(List<Statement> statements, String filePath, RDFFormat format) throws IOException {
-        FileOutputStream stream = new FileOutputStream(filePath);
-
-        RDFWriter writer = Rio.createWriter(format, stream);
-
-        RDFParser parser = Rio.createParser(format);
-
-        writer.startRDF();
-
-        for (Statement statement : statements) {
-            writer.handleStatement(statement);
-        }
-
-        writer.endRDF();
-        stream.close();
-    }
 
     public static List<Statement> SenseBoxToStatements(SenseBox senseBox) {
         List<Statement> statements = new LinkedList<Statement>();
@@ -65,7 +44,7 @@ public class RdfParser {
             statements.add(factory.createStatement(sensorResultIri, SOSA.hasSimpleResult, sensorResult));
         }
 
-        Literal senseBoxLocation = CoordinatesToLiteral(senseBox.getCurrentLocation().getCoordinates());
+        Literal senseBoxLocation = DoubleCoordinatesToLiteral(senseBox.getCurrentLocation().getCoordinates());
         statements.add(factory.createStatement(senseBoxIri, GEO.WKT_LITERAL, senseBoxLocation));
 
         Literal senseBoxTime = factory.createLiteral(senseBox.getLastMeasurementAt());
@@ -74,7 +53,21 @@ public class RdfParser {
         return statements;
     }
 
-    private static Literal CoordinatesToLiteral(double[] coordinates) {
+    public static List<Statement> MeasurementsToStatements(List<Measurement> locations) {
+        List<Statement> statements = new LinkedList<Statement>();
+
+        ValueFactory factory = SimpleValueFactory.getInstance();
+
+        return statements;
+    }
+
+    public static List<Statement> LocationsToStatements(List<Location> locations) {
+        List<Statement> statements = new LinkedList<Statement>();
+
+        return statements;
+    }
+
+    private static Literal DoubleCoordinatesToLiteral(double[] coordinates) {
         return SimpleValueFactory.getInstance().createLiteral("POINT(" + coordinates[0] + ", " + coordinates[1] + ")");
     }
 }
