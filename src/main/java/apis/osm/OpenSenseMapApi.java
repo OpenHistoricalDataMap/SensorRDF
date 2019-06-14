@@ -1,4 +1,4 @@
-package apis;
+package apis.osm;
 
 import models.osm.Location;
 import models.osm.Measurement;
@@ -15,21 +15,35 @@ import java.util.List;
 public class OpenSenseMapApi {
 
     // https://docs.opensensemap.org/#api-Measurements-getLatestMeasurements
-    public static SenseBox getSenseBoxLatestMeasurement(String senseBoxId) throws IOException {
+    public static SenseBox getLatestMeasurement(String senseBoxId) throws IOException {
         URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId);
 
         return JsonConverter.convertJsonToSenseBox(getJsonFromUrl(url));
     }
 
     // https://docs.opensensemap.org/#api-Measurements-getData
-    public static List<Measurement> getSenseBoxLatestMeasurements(String senseBoxId, String sensorId) throws IOException {
+    public static List<Measurement> getLatestMeasurements(String senseBoxId, String sensorId) throws IOException {
         URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/data/" + sensorId);
 
         return JsonConverter.convertJsonToMeasurements(getJsonFromUrl(url));
     }
 
+    // https://docs.opensensemap.org/#api-Measurements-getData
+    public static List<Measurement> getMeasurements(String senseBoxId, String sensorId, String fromDate, String toDate) throws IOException {
+        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/data/" + sensorId + "?from-date=" + fromDate + "&to-date=" + toDate);
+
+        return JsonConverter.convertJsonToMeasurements(getJsonFromUrl(url));
+    }
+
     // https://docs.opensensemap.org/#api-Boxes-getBoxLocations
-    public static List<Location> getSenseBoxLocations(String senseBoxId) throws IOException {
+    public static List<Location> getLatestLocations(String senseBoxId) throws IOException {
+        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/locations");
+
+        return JsonConverter.convertJsonToLocations(getJsonFromUrl(url));
+    }
+
+    // https://docs.opensensemap.org/#api-Boxes-getBoxLocations
+    public static List<Location> getLocations(String senseBoxId, String fromDate, String toDate) throws IOException {
         URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/locations");
 
         return JsonConverter.convertJsonToLocations(getJsonFromUrl(url));
