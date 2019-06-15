@@ -120,13 +120,17 @@ public class SenseBox {
 
     @Override
     public String toString() {
-        return "SenseBox " + id + "{" +
-                ", sensors=" + builtInSensors +
+        return "SenseBox{" +
+                "id='" + id + '\'' +
                 ", createdAt='" + createdAt + '\'' +
                 ", updatedAt='" + updatedAt + '\'' +
+                ", builtInSensors=" + builtInSensors +
                 ", name='" + name + '\'' +
-                ", currentLocation='" + currentLocation + '\'' +
                 ", exposure='" + exposure + '\'' +
+                ", currentLocation=" + currentLocation +
+                ", model='" + model + '\'' +
+                ", lastMeasurementAt='" + lastMeasurementAt + '\'' +
+                ", loc=" + loc +
                 '}';
     }
 }
