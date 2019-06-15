@@ -11,14 +11,14 @@ public class OpenSenseMapApiTest {
 
     @Test
     public void getLatestMeasurementTest() throws IOException {
-        SenseBox box = OpenSenseMapApi.getLatestMeasurement("5cc58071facf70001a872bef");
+        SenseBox box = OpenSenseMapApi.getSenseBox("5cc58071facf70001a872bef");
 
         System.out.println(box.toString());
     }
 
     @Test
     public void getLatestMeasurementsTest() throws IOException {
-        List<Measurement> measurements = OpenSenseMapApi.getLatestMeasurements("5cc58071facf70001a872bef", "5cc58071facf70001a872bf1");
+        List<Measurement> measurements = OpenSenseMapApi.getMeasurements("5cc58071facf70001a872bef", "5cc58071facf70001a872bf1");
 
         for (Measurement measurement : measurements) {
             measurement.toString();
@@ -39,7 +39,7 @@ public class OpenSenseMapApiTest {
 
     @Test
     public void getLatestLocationsTest() throws IOException {
-        List<Location> locations = OpenSenseMapApi.getLatestLocations("5cc58071facf70001a872bef");
+        List<Location> locations = OpenSenseMapApi.getLocations("5cc58071facf70001a872bef");
 
         for (Location location : locations) {
             System.out.println(location.toString());

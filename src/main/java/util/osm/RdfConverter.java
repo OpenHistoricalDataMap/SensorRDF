@@ -1,8 +1,5 @@
-package util.osm.rdf;
+package util.osm;
 
-import models.osm.Location;
-import models.osm.Measurement;
-import models.osm.Sensor;
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
 import org.eclipse.rdf4j.model.Statement;
@@ -14,12 +11,15 @@ import org.eclipse.rdf4j.model.vocabulary.RDFS;
 
 import java.util.*;
 
+import models.osm.Location;
+import models.osm.Measurement;
+import models.osm.Sensor;
 import models.osm.SenseBox;
 import vocabularys.SOSA;
 
-public class RdfParser {
+public class RdfConverter {
 
-    public static List<Statement> SenseBoxToStatements(SenseBox senseBox) {
+    public static List<Statement> convertSenseBoxToStatements(SenseBox senseBox) {
         List<Statement> statements = new LinkedList<Statement>();
 
         ValueFactory factory = SimpleValueFactory.getInstance();
@@ -44,7 +44,7 @@ public class RdfParser {
             statements.add(factory.createStatement(sensorResultIri, SOSA.hasSimpleResult, sensorResult));
         }
 
-        Literal senseBoxLocation = DoubleCoordinatesToLiteral(senseBox.getCurrentLocation().getCoordinates());
+        Literal senseBoxLocation = convertDoubleCoordinatesToLiteral(senseBox.getCurrentLocation().getCoordinates());
         statements.add(factory.createStatement(senseBoxIri, GEO.WKT_LITERAL, senseBoxLocation));
 
         Literal senseBoxTime = factory.createLiteral(senseBox.getLastMeasurementAt());
@@ -53,21 +53,19 @@ public class RdfParser {
         return statements;
     }
 
-    public static List<Statement> MeasurementsToStatements(List<Measurement> locations) {
-        List<Statement> statements = new LinkedList<Statement>();
-
-        ValueFactory factory = SimpleValueFactory.getInstance();
-
-        return statements;
-    }
-
-    public static List<Statement> LocationsToStatements(List<Location> locations) {
+    public static List<Statement> convertMeasurementsToStatements(List<Measurement> locations) {
         List<Statement> statements = new LinkedList<Statement>();
 
         return statements;
     }
 
-    private static Literal DoubleCoordinatesToLiteral(double[] coordinates) {
+    public static List<Statement> convertLocationsToStatements(List<Location> locations) {
+        List<Statement> statements = new LinkedList<Statement>();
+
+        return statements;
+    }
+
+    private static Literal convertDoubleCoordinatesToLiteral(double[] coordinates) {
         return SimpleValueFactory.getInstance().createLiteral("POINT(" + coordinates[0] + ", " + coordinates[1] + ")");
     }
 }

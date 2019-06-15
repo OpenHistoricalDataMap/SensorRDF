@@ -44,7 +44,8 @@ public class Location {
 
     @Override
     public String toString() {
-        return "timestamp='" + timestamp + '\'' +
+        return "Location{" +
+                "timestamp='" + timestamp + '\'' +
                 ", coordinates=" + Arrays.toString(coordinates) +
                 ", type='" + type + '\'' +
                 '}';

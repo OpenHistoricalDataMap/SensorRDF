@@ -1,4 +1,4 @@
-package util.osm;
+package util;
 
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.RDFFormat;
@@ -9,7 +9,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-public class RdfOutput {
+public class RdfOutputHandler {
     public static void OutputRdfToFile(List<Statement> statements, String filePath, RDFFormat format) throws IOException {
         FileOutputStream stream = new FileOutputStream(filePath);
 

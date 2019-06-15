@@ -44,10 +44,10 @@ public class Measurement {
 
     @Override
     public String toString() {
-        return "{" +
+        return "Measurement{" +
                 "value=" + value +
+                ", createdAt='" + createdAt + '\'' +
                 ", location=" + Arrays.toString(location) +
-                ", createdAt=" + createdAt +
                 '}';
     }
 }

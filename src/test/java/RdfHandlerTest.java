@@ -8,7 +8,7 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 
 import org.junit.jupiter.api.Test;
 
-import util.osm.RdfOutput;
+import util.RdfOutputHandler;
 import vocabularys.SOSA;
 
 import java.io.IOException;
@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class RdfOutputTest {
+public class RdfHandlerTest {
 
     @Test
     public void testOutput() throws IOException {
@@ -36,6 +36,6 @@ public class RdfOutputTest {
         Literal object3 = factory.createLiteral(new GregorianCalendar(2019, Calendar.MAY, 31).getTime());
         Statement s3 = factory.createStatement(subject, predicate3, object3);
 
-        RdfOutput.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
     }
 }

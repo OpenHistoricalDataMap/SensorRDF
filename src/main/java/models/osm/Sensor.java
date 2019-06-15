@@ -76,12 +76,12 @@ public class Sensor {
     @Override
     public String toString() {
         return "Sensor{" +
-                "icon='" + icon + "\'" +
-                ", unit='" + unit + "\'" +
+                "icon='" + icon + '\'' +
                 ", title='" + title + '\'' +
+                ", unit='" + unit + '\'' +
                 ", sensorType='" + sensorType + '\'' +
                 ", sensorID='" + sensorID + '\'' +
-                ", lastMeasurement=" + lastMeasurement.toString() +
+                ", lastMeasurement=" + lastMeasurement +
                 '}';
     }
 }
