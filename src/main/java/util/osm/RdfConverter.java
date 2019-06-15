@@ -15,6 +15,7 @@ import models.osm.Location;
 import models.osm.Measurement;
 import models.osm.Sensor;
 import models.osm.SenseBox;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import vocabularys.SOSA;
 
 public class RdfConverter {
@@ -53,16 +54,12 @@ public class RdfConverter {
         return statements;
     }
 
-    public static List<Statement> convertMeasurementsToStatements(List<Measurement> locations) {
-        List<Statement> statements = new LinkedList<Statement>();
-
-        return statements;
+    public static List<Statement> convertToStatements(SenseBox senseBox, List<Measurement> measurements) {
+        throw new NotImplementedException();
     }
 
     public static List<Statement> convertLocationsToStatements(List<Location> locations) {
-        List<Statement> statements = new LinkedList<Statement>();
-
-        return statements;
+        throw new NotImplementedException();
     }
 
     private static Literal convertDoubleCoordinatesToLiteral(double[] coordinates) {

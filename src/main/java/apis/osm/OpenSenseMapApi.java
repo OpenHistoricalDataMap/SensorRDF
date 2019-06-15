@@ -25,7 +25,7 @@ public class OpenSenseMapApi {
      * @see "https://docs.opensensemap.org/#api-Measurements-getData"
      */
     public static List<Measurement> getMeasurements(String senseBoxId, String sensorId) throws IOException {
-        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/data");
+        URL url = new URL("https://api.opensensemap.org/boxes/" + senseBoxId + "/data/" + sensorId);
 
         return JsonConverter.convertToMeasurements(JsonInputHandler.getJsonFromUrl(url));
     }

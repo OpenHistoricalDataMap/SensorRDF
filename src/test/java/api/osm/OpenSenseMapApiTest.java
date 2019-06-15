@@ -1,3 +1,5 @@
+package api.osm;
+
 import apis.osm.OpenSenseMapApi;
 import models.osm.Location;
 import models.osm.Measurement;
