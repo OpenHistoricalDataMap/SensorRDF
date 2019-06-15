@@ -10,7 +10,7 @@ import java.util.List;
 public class OpenSenseMapApiTest {
 
     @Test
-    public void getLatestMeasurementTest() throws IOException {
+    public void getSenseBoxTest() throws IOException {
         SenseBox box = OpenSenseMapApi.getSenseBox("5cc58071facf70001a872bef");
 
         System.out.println(box.toString());

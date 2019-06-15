@@ -16,7 +16,7 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class RdfHandlerTest {
+public class RdfOutputHandlerTest {
 
     @Test
     public void testOutput() throws IOException {
