@@ -1,10 +1,9 @@
-package apis.osm;
+package osm.util;
 
-import models.osm.Location;
-import models.osm.Measurement;
-import models.osm.SenseBox;
+import osm.models.Location;
+import osm.models.Measurement;
+import osm.models.SenseBox;
 import util.JsonInputHandler;
-import util.osm.JsonConverter;
 
 import java.io.IOException;
 import java.net.URL;

@@ -1,4 +1,4 @@
-package util.osm;
+package osm.util;
 
 import org.eclipse.rdf4j.model.IRI;
 import org.eclipse.rdf4j.model.Literal;
@@ -11,10 +11,10 @@ import org.eclipse.rdf4j.model.vocabulary.RDFS;
 
 import java.util.*;
 
-import models.osm.Location;
-import models.osm.Measurement;
-import models.osm.Sensor;
-import models.osm.SenseBox;
+import osm.models.Location;
+import osm.models.Measurement;
+import osm.models.Sensor;
+import osm.models.SenseBox;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 import vocabularys.SOSA;
 

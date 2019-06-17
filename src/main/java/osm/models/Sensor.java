@@ -1,4 +1,4 @@
-package models.osm;
+package osm.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

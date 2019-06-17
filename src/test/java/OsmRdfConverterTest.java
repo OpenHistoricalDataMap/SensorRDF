@@ -1,12 +1,10 @@
-package util.osm;
-
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.junit.jupiter.api.Test;
 
-import apis.osm.OpenSenseMapApi;
+import osm.util.OpenSenseMapApi;
+import osm.util.RdfConverter;
 import util.RdfOutputHandler;
-import util.osm.RdfConverter;
 
 import java.io.IOException;
 import java.util.List;

@@ -1,9 +1,7 @@
-package api.osm;
-
-import apis.osm.OpenSenseMapApi;
-import models.osm.Location;
-import models.osm.Measurement;
-import models.osm.SenseBox;
+import osm.util.OpenSenseMapApi;
+import osm.models.Location;
+import osm.models.Measurement;
+import osm.models.SenseBox;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
