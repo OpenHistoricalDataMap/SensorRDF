@@ -1,11 +1,11 @@
-package util.osm;
+package osm.util;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import models.osm.Location;
-import models.osm.Measurement;
-import models.osm.SenseBox;
+import osm.models.Location;
+import osm.models.Measurement;
+import osm.models.SenseBox;
 
 import java.io.IOException;
 import java.util.List;
