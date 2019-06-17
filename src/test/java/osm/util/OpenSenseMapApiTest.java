@@ -1,4 +1,5 @@
-import osm.util.OpenSenseMapApi;
+package osm.util;
+
 import osm.models.Location;
 import osm.models.Measurement;
 import osm.models.SenseBox;

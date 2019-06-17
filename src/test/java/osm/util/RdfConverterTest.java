@@ -1,3 +1,5 @@
+package osm.util;
+
 import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.rio.RDFFormat;
 import org.junit.jupiter.api.BeforeAll;
@@ -7,14 +9,12 @@ import osm.models.Location;
 import osm.models.Measurement;
 import osm.models.SenseBox;
 import osm.models.Sensor;
-import osm.util.OpenSenseMapApi;
-import osm.util.RdfConverter;
 import util.RdfOutputHandler;
 
 import java.io.IOException;
 import java.util.List;
 
-public class OsmRdfConverterTest {
+public class RdfConverterTest {
 
     private static String mobileStationId = "5cc58071facf70001a872bef";
     private static String mobileStationSensorID = "5cc58071facf70001a872bf1";
