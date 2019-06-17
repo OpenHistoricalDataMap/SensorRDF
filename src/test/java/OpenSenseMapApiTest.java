@@ -2,6 +2,7 @@ import osm.util.OpenSenseMapApi;
 import osm.models.Location;
 import osm.models.Measurement;
 import osm.models.SenseBox;
+
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -9,16 +10,22 @@ import java.util.List;
 
 public class OpenSenseMapApiTest {
 
+    private static String mobileStationId = "5cc58071facf70001a872bef";
+    private static String mobileStationSensorID = "5cc58071facf70001a872bf1";
+
+    private static String fromDate = "2019-05-01T00:00:00.000Z";
+    private static String toDate = "2019-06-01T00:00:00.000Z";
+
     @Test
     public void getSenseBoxTest() throws IOException {
-        SenseBox box = OpenSenseMapApi.getSenseBox("5cc58071facf70001a872bef");
+        SenseBox box = OpenSenseMapApi.getSenseBox(mobileStationId);
 
         System.out.println(box.toString());
     }
 
     @Test
     public void getLatestMeasurementsTest() throws IOException {
-        List<Measurement> measurements = OpenSenseMapApi.getMeasurements("5cc58071facf70001a872bef", "5cc58071facf70001a872bf1");
+        List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID);
 
         for (Measurement measurement : measurements) {
             measurement.toString();
@@ -27,10 +34,7 @@ public class OpenSenseMapApiTest {
 
     @Test
     public void getMeasurementsTest() throws IOException {
-        String fromDate = "2019-05-01T00:00:00.000Z";
-        String toDate = "2019-06-01T00:00:00.000Z";
-
-        List<Measurement> measurements = OpenSenseMapApi.getMeasurements("5cc58071facf70001a872bef", "5cc58071facf70001a872bf1", fromDate, toDate);
+        List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID, fromDate, toDate);
 
         for (Measurement measurement : measurements) {
             measurement.toString();
@@ -39,7 +43,7 @@ public class OpenSenseMapApiTest {
 
     @Test
     public void getLatestLocationsTest() throws IOException {
-        List<Location> locations = OpenSenseMapApi.getLocations("5cc58071facf70001a872bef");
+        List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId);
 
         for (Location location : locations) {
             System.out.println(location.toString());
@@ -48,10 +52,7 @@ public class OpenSenseMapApiTest {
 
     @Test
     public void getLocationsTest() throws IOException {
-        String fromDate = "2019-06-01T00:00:00.000Z";
-        String toDate = "2019-06-15T00:00:00.000Z";
-
-        List<Location> locations = OpenSenseMapApi.getLocations("5cc58071facf70001a872bef", fromDate, toDate);
+        List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId, fromDate, toDate);
 
         for (Location location : locations) {
             System.out.println(location.toString());
