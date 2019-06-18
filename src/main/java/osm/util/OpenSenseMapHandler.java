@@ -15,7 +15,7 @@ import java.util.List;
 
 public class OpenSenseMapHandler {
 
-    public void handleUserAction(CommandLine config) throws IOException {
+    public void handleConfig(CommandLine config) throws IOException {
         SenseBox senseBox = OpenSenseMapApi.getSenseBox(config.getOptionValue("osm"));
 
         List<Statement> statements = RdfConverter.convertSenseBoxToStatements(senseBox);

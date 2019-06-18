@@ -12,7 +12,7 @@ public class Main {
         CommandLine config = new Config().parseArgs(args);
 
         if (config.hasOption("osm")) {
-            new OpenSenseMapHandler().handleUserAction(config);
+            new OpenSenseMapHandler().handleConfig(config);
         }
     }
 }
