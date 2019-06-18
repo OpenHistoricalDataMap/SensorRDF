@@ -10,7 +10,6 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 
 import org.junit.jupiter.api.Test;
 
-import util.RdfOutputHandler;
 import vocabularys.SOSA;
 
 import java.io.IOException;
@@ -21,7 +20,7 @@ import java.util.GregorianCalendar;
 public class RdfOutputHandlerTest {
 
     @Test
-    public void testOutput() throws IOException {
+    public void testOutputRdfToFile() throws IOException {
 
         ValueFactory factory = SimpleValueFactory.getInstance();
 

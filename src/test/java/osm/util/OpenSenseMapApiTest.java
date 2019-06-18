@@ -25,7 +25,7 @@ public class OpenSenseMapApiTest {
     }
 
     @Test
-    public void getLatestMeasurementsTest() throws IOException {
+    public void testGetLatestMeasurements() throws IOException {
         List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID);
 
         for (Measurement measurement : measurements) {
@@ -34,7 +34,7 @@ public class OpenSenseMapApiTest {
     }
 
     @Test
-    public void getMeasurementsTest() throws IOException {
+    public void testGetMeasurements() throws IOException {
         List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID, fromDate, toDate);
 
         for (Measurement measurement : measurements) {
@@ -43,7 +43,7 @@ public class OpenSenseMapApiTest {
     }
 
     @Test
-    public void getLatestLocationsTest() throws IOException {
+    public void testGetLatestLocations() throws IOException {
         List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId);
 
         for (Location location : locations) {
@@ -52,7 +52,7 @@ public class OpenSenseMapApiTest {
     }
 
     @Test
-    public void getLocationsTest() throws IOException {
+    public void testGetLocations() throws IOException {
         List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId, fromDate, toDate);
 
         for (Location location : locations) {
