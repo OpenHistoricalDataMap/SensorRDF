@@ -33,7 +33,7 @@ public class RdfConverterTest {
     public void testConvertSenseBoxToStatements() throws IOException {
         List<Statement> statements = RdfConverter.convertSenseBoxToStatements(senseBox);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.RDFXML);
     }
 
     @Test
