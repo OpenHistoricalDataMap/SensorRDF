@@ -53,6 +53,6 @@ public class OpenSenseMapHandler {
 
         String filePath = config.getOptionValue("path", System.getProperty("user.home") + "/OsmOutput.rdf");
 
-        RdfOutputHandler.OutputRdfToFile(statements, filePath, RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(statements, filePath);
     }
 }

@@ -33,7 +33,7 @@ public class RdfConverterTest {
     public void testConvertSenseBoxToStatements() throws IOException {
         List<Statement> statements = RdfConverter.convertSenseBoxToStatements(senseBox);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.RDFXML);
+        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
     }
 
     @Test
@@ -44,7 +44,7 @@ public class RdfConverterTest {
 
         List<Statement> statements = RdfConverter.convertMeasurementsToStatements(sensor, measurements);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
     }
 
     @Test
@@ -53,6 +53,6 @@ public class RdfConverterTest {
 
         List<Statement> statements = RdfConverter.convertLocationsToStatements(senseBox, locations);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
     }
 }

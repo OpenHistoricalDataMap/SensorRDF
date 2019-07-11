@@ -37,6 +37,6 @@ public class RdfOutputHandlerTest {
         Literal object3 = factory.createLiteral(new GregorianCalendar(2019, Calendar.MAY, 31).getTime());
         Statement s3 = factory.createStatement(subject, predicate3, object3);
 
-        RdfOutputHandler.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf", RDFFormat.TURTLE);
+        RdfOutputHandler.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf");
     }
 }

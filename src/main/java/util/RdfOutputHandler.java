@@ -10,10 +10,10 @@ import java.io.IOException;
 import java.util.List;
 
 public class RdfOutputHandler {
-    public static void OutputRdfToFile(List<Statement> statements, String filePath, RDFFormat format) throws IOException {
+    public static void OutputRdfToFile(List<Statement> statements, String filePath) throws IOException {
         FileOutputStream stream = new FileOutputStream(filePath);
 
-        RDFWriter writer = Rio.createWriter(format, stream);
+        RDFWriter writer = Rio.createWriter(RDFFormat.TURTLE, stream);
 
         writer.startRDF();
 
