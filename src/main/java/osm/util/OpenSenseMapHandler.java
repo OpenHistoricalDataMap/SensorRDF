@@ -2,7 +2,6 @@ package osm.util;
 
 import org.apache.commons.cli.CommandLine;
 import org.eclipse.rdf4j.model.Statement;
-import org.eclipse.rdf4j.rio.RDFFormat;
 
 import osm.models.Location;
 import osm.models.Measurement;

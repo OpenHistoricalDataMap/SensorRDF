@@ -1,6 +1,5 @@
 package util;
 
-import org.apache.commons.cli.ParseException;
 import org.apache.commons.cli.UnrecognizedOptionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class ConfigTest {
 
     @Test
-    public void testParseArgs() throws ParseException {
+    public void testParseArgs() {
         String[] args = new String[]{
                 "-osm", "senseBoxId",
                 "-measurements",
@@ -17,7 +16,7 @@ public class ConfigTest {
                 "-path", "/test/path/out.rdf"
         };
 
-        new Config().parseArgs(args);
+        Assertions.assertDoesNotThrow(() -> new Config().parseArgs(args));
     }
 
     @Test
@@ -27,8 +26,6 @@ public class ConfigTest {
                 "-unknown", "valueOfUnknown"
         };
 
-        Assertions.assertThrows(UnrecognizedOptionException.class, () -> {
-            new Config().parseArgs(args);
-        });
+        Assertions.assertThrows(UnrecognizedOptionException.class, () -> new Config().parseArgs(args));
     }
 }

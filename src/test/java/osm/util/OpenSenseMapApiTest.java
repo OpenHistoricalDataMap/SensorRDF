@@ -1,5 +1,6 @@
 package osm.util;
 
+import org.junit.jupiter.api.Assertions;
 import osm.models.Location;
 import osm.models.Measurement;
 import osm.models.SenseBox;
@@ -21,42 +22,35 @@ public class OpenSenseMapApiTest {
     public void getSenseBoxTest() throws IOException {
         SenseBox box = OpenSenseMapApi.getSenseBox(mobileStationId);
 
-        System.out.println(box.toString());
+        Assertions.assertNotNull(box);
     }
 
     @Test
     public void testGetLatestMeasurements() throws IOException {
         List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID);
 
-        for (Measurement measurement : measurements) {
-            measurement.toString();
-        }
+        //Assertions.assertEquals(0, measurements.size());
     }
 
     @Test
     public void testGetMeasurements() throws IOException {
         List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID, fromDate, toDate);
 
-        for (Measurement measurement : measurements) {
-            measurement.toString();
-        }
+        Assertions.assertEquals(5431, measurements.size());
+
     }
 
     @Test
     public void testGetLatestLocations() throws IOException {
         List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId);
 
-        for (Location location : locations) {
-            System.out.println(location.toString());
-        }
+        //Assertions.assertEquals(0, locations.size());
     }
 
     @Test
     public void testGetLocations() throws IOException {
         List<Location> locations = OpenSenseMapApi.getLocations(mobileStationId, fromDate, toDate);
 
-        for (Location location : locations) {
-            System.out.println(location.toString());
-        }
+        Assertions.assertEquals(1401, locations.size());
     }
 }

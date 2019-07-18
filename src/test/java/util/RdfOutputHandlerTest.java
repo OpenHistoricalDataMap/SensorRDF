@@ -6,21 +6,21 @@ import org.eclipse.rdf4j.model.Statement;
 import org.eclipse.rdf4j.model.ValueFactory;
 import org.eclipse.rdf4j.model.impl.SimpleValueFactory;
 import org.eclipse.rdf4j.model.vocabulary.GEO;
-import org.eclipse.rdf4j.rio.RDFFormat;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import vocabularys.SOSA;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 public class RdfOutputHandlerTest {
 
     @Test
-    public void testOutputRdfToFile() throws IOException {
+    public void testOutputRdfToFile() {
 
         ValueFactory factory = SimpleValueFactory.getInstance();
 
@@ -37,6 +37,10 @@ public class RdfOutputHandlerTest {
         Literal object3 = factory.createLiteral(new GregorianCalendar(2019, Calendar.MAY, 31).getTime());
         Statement s3 = factory.createStatement(subject, predicate3, object3);
 
-        RdfOutputHandler.OutputRdfToFile(Arrays.asList(s1, s2, s3), System.getProperty("user.home") + "/output.rdf");
+        List<Statement> statements = Arrays.asList(s1, s2, s3);
+
+        String testFile = System.getProperty("user.home") + "/output.rdf";
+
+        Assertions.assertDoesNotThrow(() -> RdfOutputHandler.OutputRdfToFile(statements, testFile));
     }
 }

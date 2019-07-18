@@ -1,20 +1,25 @@
 package osm.util;
 
 import org.eclipse.rdf4j.model.Statement;
-import org.eclipse.rdf4j.rio.RDFFormat;
+
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
 import osm.models.Location;
 import osm.models.Measurement;
 import osm.models.SenseBox;
 import osm.models.Sensor;
 import util.RdfOutputHandler;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.List;
 
 public class RdfConverterTest {
+
+    private static String testFile = System.getProperty("user.home") + "/output.rdf";
 
     private static String mobileStationId = "5cc58071facf70001a872bef";
     private static String mobileStationSensorID = "5cc58071facf70001a872bf1";
@@ -29,11 +34,16 @@ public class RdfConverterTest {
         senseBox = OpenSenseMapApi.getSenseBox(mobileStationId);
     }
 
+    @AfterAll
+    public static void tearDown() throws IOException {
+        Files.delete(new File(testFile).toPath());
+    }
+
     @Test
-    public void testConvertSenseBoxToStatements() throws IOException {
+    public void testConvertSenseBoxToStatements() {
         List<Statement> statements = RdfConverter.convertSenseBoxToStatements(senseBox);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
+        Assertions.assertDoesNotThrow(() -> RdfOutputHandler.OutputRdfToFile(statements, testFile));
     }
 
     @Test
@@ -44,7 +54,7 @@ public class RdfConverterTest {
 
         List<Statement> statements = RdfConverter.convertMeasurementsToStatements(sensor, measurements);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
+        Assertions.assertDoesNotThrow(() -> RdfOutputHandler.OutputRdfToFile(statements, testFile));
     }
 
     @Test
@@ -53,6 +63,6 @@ public class RdfConverterTest {
 
         List<Statement> statements = RdfConverter.convertLocationsToStatements(senseBox, locations);
 
-        RdfOutputHandler.OutputRdfToFile(statements, System.getProperty("user.home") + "/output.rdf");
+        Assertions.assertDoesNotThrow(() -> RdfOutputHandler.OutputRdfToFile(statements, testFile));
     }
 }
