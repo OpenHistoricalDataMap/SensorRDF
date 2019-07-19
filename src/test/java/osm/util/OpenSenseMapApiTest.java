@@ -37,7 +37,6 @@ public class OpenSenseMapApiTest {
         List<Measurement> measurements = OpenSenseMapApi.getMeasurements(mobileStationId, mobileStationSensorID, fromDate, toDate);
 
         Assertions.assertEquals(5431, measurements.size());
-
     }
 
     @Test
