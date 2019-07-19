@@ -1,6 +1,6 @@
 # SensorRDF
 
-The SensorRDF parser allows you to convert unstructured sensor data to the standardized RDF format. At the moment, only the openSenseMap API is implemented as a data source. However, this project is meant to be a template for accessing different APIs and collect their data.
+The SensorRDF parser allows you to download and convert unstructured sensor data to the standardized RDF format. At the moment, only the openSenseMap API is implemented as a data source. However, this project is meant to be a template for accessing different APIs.
 
 ## Getting Started
 
@@ -8,7 +8,7 @@ The following instructions will help you compile and run this project.
 
 ### Prequisites
 
-Make sure you match the following Requirements before starting:
+Make sure you match the following requirements before starting:
 
 * have Java setup on your machine (implemented with Java SE 11)
 * have Maven setup on your machine (implemented with Maven 3.6.1)
@@ -37,9 +37,11 @@ java -jar XXX.jar -osm 5cc58071facf70001a872bef -measurements
 
 Some basic tests are implemented under the `test` folder. They may be useful to you when experimenting with this project.
 
-## Used Frameworks and Ontologies
+## Used Frameworks and Vocabularies
 
-TBF
+The base of this project is the RDF4J framework (formerly known as OpenRDF Sesame). It helps constructing `Statements` consisting of `IRIs` and `Literals` and writing the output. RDF4J also defines some well known rdf vocabularies, like FOAF and GeoSPARQL. Parts of the missing SSN/SOSA ontology got custom implemented in this project.
+
+For mapping JSON input to objects, the jackson framework is used.
 
 ## What is RDF and why do I need it?
 
