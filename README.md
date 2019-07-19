@@ -30,7 +30,7 @@ You may use the following parameters when calling the program:
 Example call:
 ```
 java -jar XXX.jar -osm 5cc58071facf70001a872bef -measurements
-     -timerange 2019-05-01T00:00:00.000Z 2019-05-15T00:00:00.000Z -path /rdf.out
+                  -timerange 2019-05-01T00:00:00.000Z 2019-05-15T00:00:00.000Z -path /rdf.out
 ```
 
 ### Tests
