@@ -10,8 +10,8 @@ The following instructions will help you compile and run this project.
 
 Make sure you match the following Requirements before starting:
 
-* have Java setup on your machine (we used Java SE 11)
-* have Maven setup on your machine (we used Maven 3.6.1)
+* have Java setup on your machine (implemented with Java SE 11)
+* have Maven setup on your machine (implemented with Maven 3.6.1)
 
 ### Compiling and Using the Code
 
@@ -36,6 +36,10 @@ java -jar XXX.jar -osm 5cc58071facf70001a872bef -measurements
 ### Tests
 
 Some basic tests are implemented under the `test` folder. They may be useful to you when experimenting with this project.
+
+## Used Frameworks and Ontologies
+
+TBF
 
 ## What is RDF and why do I need it?
 
