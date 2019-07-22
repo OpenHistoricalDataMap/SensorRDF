@@ -1,4 +1,4 @@
-[![Hits-of-Code](https://hitsofcode.com/github.com/openhistoricaldatamap/sensorrdf)](https://hitsofcode.com/view/github.com/openhistoricaldatamap/sensorrdf)
+[![Hits-of-Code](https://hitsofcode.com/github/OpenHistoricalDataMap/SensorRDF)](https://hitsofcode.com/view/github/OpenHistoricalDataMap/SensorRDF)
 
 # SensorRDF
 
