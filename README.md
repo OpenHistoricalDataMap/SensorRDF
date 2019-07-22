@@ -1,6 +1,3 @@
-[![Hits-of-Code](https://hitsofcode.com/github/OpenHistoricalDataMap/SensorRDF)](https://hitsofcode.com/view/github/OpenHistoricalDataMap/SensorRDF)
-[![License: GPL v3](https://img.shields.io/github/license/OpenHistoricalDataMap/SensorRDF.svg)](https://img.shields.io/github/license/OpenHistoricalDataMap/SensorRDF.svg)
-
 # SensorRDF
 
 The SensorRDF parser allows you to download and convert unstructured sensor data to the standardized RDF format. At the moment, only the openSenseMap API is implemented as a data source. However, this project is meant to be a template for accessing different APIs.
