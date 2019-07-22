@@ -1,4 +1,5 @@
 [![Hits-of-Code](https://hitsofcode.com/github/OpenHistoricalDataMap/SensorRDF)](https://hitsofcode.com/view/github/OpenHistoricalDataMap/SensorRDF)
+[![License: GPL v3](https://img.shields.io/github/license/OpenHistoricalDataMap/SensorRDF.svg)](https://img.shields.io/github/license/OpenHistoricalDataMap/SensorRDF.svg)
 
 # SensorRDF
 
