@@ -1,4 +1,5 @@
 import org.apache.commons.cli.CommandLine;
+import org.apache.commons.cli.HelpFormatter;
 import org.apache.commons.cli.MissingOptionException;
 import org.apache.commons.cli.ParseException;
 
@@ -10,8 +11,9 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws ParseException, IOException {
 
+        Config c = new Config();
         try {
-            CommandLine config = new Config().parseArgs(args);
+            CommandLine config = c.parseArgs(args);
 
             if (config.hasOption("osm")) {
                 new OpenSenseMapHandler().handleConfig(config);
@@ -20,8 +22,8 @@ public class Main {
                 System.out.println("Please refer to the README.");
             }
         } catch (MissingOptionException e) {
-            System.out.println("You are missing the following options: " + e.getMissingOptions());
-            System.out.println("Please refer to the README.");
+            System.out.println("How to use");
+            c.printHelp();
         }
     }
 }

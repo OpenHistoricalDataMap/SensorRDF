@@ -1,0 +1,14 @@
+
+<SenseBox:5cc58071facf70001a872bef> a <http://www.w3.org/ns/sosa/Platform>;
+  <http://www.opengis.net/ont/geosparql#wktLiteral> "POINT(13.441607, 52.469905)", "POINT(13.4420608, 52.4705383)",
+    "POINT(13.442437, 52.4705708)", "POINT(52.4705708, 13.442437)";
+  <http://www.w3.org/ns/sosa/hosts> <Sensor:5cc58071facf70001a872bf0>, <Sensor:5cc58071facf70001a872bf1>;
+  <http://www.w3.org/ns/sosa/resultTime> "2019-05-11T17:57:48.949Z", "2019-05-11T17:58:39.542Z",
+    "2019-05-11T18:02:58.328Z", "2019-05-11T18:05:48.536Z", "2019-05-11T18:51:30.618Z",
+    "2019-05-11T18:53:02.765Z" .
+
+<Sensor:5cc58071facf70001a872bf1> a <http://www.w3.org/ns/sosa/Sensor>;
+  <http://www.w3.org/2000/01/rdf-schema#label> "PM2.5" .
+
+<Sensor:5cc58071facf70001a872bf0> a <http://www.w3.org/ns/sosa/Sensor>;
+  <http://www.w3.org/2000/01/rdf-schema#label> "PM10" .

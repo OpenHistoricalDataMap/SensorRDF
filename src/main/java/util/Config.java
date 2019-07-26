@@ -47,9 +47,16 @@ public class Config {
                 .argName("/path/to/file.rdf")
                 .desc("Path to output file.")
                 .build());
+
     }
 
     public CommandLine parseArgs(String[] args) throws ParseException {
         return new DefaultParser().parse(options, args);
     }
+
+    public void printHelp() {
+        HelpFormatter hf = new HelpFormatter();
+        hf.printHelp("OSM to RDF Parser ", options);
+    }
+
 }
