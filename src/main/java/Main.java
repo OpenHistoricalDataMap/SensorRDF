@@ -22,7 +22,8 @@ public class Main {
                 System.out.println("Please refer to the README.");
             }
         } catch (MissingOptionException e) {
-            System.out.println("How to use");
+            c.printHelp();
+        } catch (NullPointerException npe){
             c.printHelp();
         }
     }
