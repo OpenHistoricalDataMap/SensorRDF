@@ -1,5 +1,6 @@
 package util;
 
+import org.apache.commons.cli.MissingArgumentException;
 import org.apache.commons.cli.UnrecognizedOptionException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,9 +24,20 @@ public class ConfigTest {
     public void testParseArgsWithUnknownParameter() {
         String[] args = new String[]{
                 "-osm", "senseBoxId",
-                "-unknown", "valueOfUnknown"
+                "-unknown", "valueOfUnknown",
+                "-path", "file.out"
         };
 
         Assertions.assertThrows(UnrecognizedOptionException.class, () -> new Config().parseArgs(args));
+    }
+
+    @Test
+    public void testParseArgsWithMissingArgument() {
+        String[] args = new String[]{
+                "-osm",
+                "-path", "file.out"
+        };
+
+        Assertions.assertThrows(MissingArgumentException.class, () -> new Config().parseArgs(args));
     }
 }

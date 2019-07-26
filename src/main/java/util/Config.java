@@ -18,19 +18,22 @@ public class Config {
                 .desc("Id of the SenseBox.")
                 .build());
 
-        options.addOption(Option.builder("measurements")
+        options.addOption(Option.builder("m")
+                .longOpt("measurements")
                 .required(false)
                 .hasArg(false)
                 .desc("Set if measurements and locations should get collected.")
                 .build());
 
-        options.addOption(Option.builder("locations")
+        options.addOption(Option.builder("l")
+                .longOpt("locations")
                 .required(false)
                 .hasArg(false)
                 .desc("Set if only locations should get collected.")
                 .build());
 
-        options.addOption(Option.builder("timerange")
+        options.addOption(Option.builder("t")
+                .longOpt("timerange")
                 .required(false)
                 .hasArg(true)
                 .numberOfArgs(2)
@@ -39,7 +42,8 @@ public class Config {
                 .desc("Time range in witch data gets collected. (Example: 2019-05-01T00:00:00.000Z 2019-05-15T00:00:00.000Z)")
                 .build());
 
-        options.addOption(Option.builder("path")
+        options.addOption(Option.builder("p")
+                .longOpt("path")
                 .required(true)
                 .hasArg(true)
                 .numberOfArgs(1)
@@ -58,5 +62,4 @@ public class Config {
         HelpFormatter hf = new HelpFormatter();
         hf.printHelp("OSM to RDF Parser ", options);
     }
-
 }

@@ -1,9 +1,6 @@
 package osm.util;
 
 import org.apache.commons.cli.CommandLine;
-import org.apache.commons.cli.HelpFormatter;
-import org.apache.commons.cli.Option;
-import org.apache.commons.cli.Options;
 import org.eclipse.rdf4j.model.Statement;
 
 import osm.models.Location;
@@ -18,7 +15,6 @@ import java.util.List;
 public class OpenSenseMapHandler {
 
     public void handleConfig(CommandLine config) throws IOException {
-
         SenseBox senseBox = OpenSenseMapApi.getSenseBox(config.getOptionValue("osm"));
 
         List<Statement> statements = RdfConverter.convertSenseBoxToStatements(senseBox);
