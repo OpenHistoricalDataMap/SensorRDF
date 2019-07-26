@@ -40,7 +40,7 @@ public class Config {
                 .build());
 
         options.addOption(Option.builder("path")
-                .required(false)
+                .required(true)
                 .hasArg(true)
                 .numberOfArgs(1)
                 .optionalArg(false)
