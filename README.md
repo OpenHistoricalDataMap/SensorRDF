@@ -42,7 +42,3 @@ Some basic tests are implemented under the `test` folder. They may be useful to 
 The base of this project is the RDF4J framework (formerly known as OpenRDF Sesame). It helps constructing `Statements` consisting of `IRIs` and `Literals` and writing the output. RDF4J also defines some well known rdf vocabularies, like FOAF and GeoSPARQL. Parts of the missing SSN/SOSA ontology got custom implemented in this project.
 
 For mapping JSON input to objects, the jackson framework is used.
-
-## What is RDF and why do I need it?
-
-TBF
