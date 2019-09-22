@@ -34,8 +34,7 @@ public class OpenSenseMapHandler {
 
                 statements.addAll(RdfConverter.convertMeasurementsToStatements(sensor, measurements));
             }
-
-
+            
         } else if (config.hasOption("locations")) {
             List<Location> locations = null;
 
